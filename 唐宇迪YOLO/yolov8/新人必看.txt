@@ -1,0 +1,20 @@
+1、安装Anaconda和PyCharm
+直接下载安装即可，网上有许多教材。
+2、创建虚拟环境
+创建：conda create -n yolov8 python=3.7
+查看：conda env list
+3、下载yolov8源码
+进入：https://github.com/ultralytics/ultralytics
+下载：yolov8源码
+4、下载权重
+进入：https://github.com/ultralytics/ultralytics/releases/download/v8.0.0/yolov8n.pt
+下载：yolov8n.pt
+5、PyCharm中打开项目ultralytics-main
+切换虚拟环境：使用刚刚conda创建的yolov8 虚拟环境
+6、安装依赖requirements.txt
+Terminal中安装依赖：pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+7、运行推理
+ultralytics\yolo\v8\detect\predict.py
+8、运行训练 
+需要先准备coco128数据集
+yolo task=detect mode=train model=yolov8n.pt data=coco128.yaml epochs=3 imgsz=640
